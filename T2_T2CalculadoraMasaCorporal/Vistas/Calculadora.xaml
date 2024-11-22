@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T2_T2CalculadoraMasaCorporal.Vistas.Calculadora"
+             Title="Calculadora">
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+        <Image 
+            Source="imc.jpg" 
+            WidthRequest="120"
+            HeightRequest="120"
+            /> 
+
+            
+        <Label 
+            Text="Calcula tu IMC"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label 
+                Text="Altura (en metros): "
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Entry x:Name="txtAltura"
+                Placeholder="Altura"
+                HorizontalTextAlignment="Center"
+                TextChanged="OnAlturaTextChanged"
+                Keyboard="Numeric"
+                ClearButtonVisibility="WhileEditing"
+                />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+            <Label 
+                Text="Peso (en kg): "
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Entry x:Name="txtPeso"
+                Placeholder="Peso"
+                HorizontalTextAlignment="Center"
+                Keyboard="Numeric"
+                ClearButtonVisibility="WhileEditing"
+                TextChanged="OnPesoTextChanged"
+                />
+        </HorizontalStackLayout>
+
+        
+        <Label 
+            x:Name="lblResultado"
+            Text="Tu IMC"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button 
+            x:Name="btnCalcular"
+            Text="¡Click para calcular!"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Clicked="OnCalcularClicked" />
+    </VerticalStackLayout>
+</ContentPage>
